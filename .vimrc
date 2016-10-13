@@ -2,7 +2,8 @@
 /* This is vimrc environment for sinban */
 # 
 # git clone https://github.com/gmarik/Vundle.vit.git ~/.vim/bundle/Vundle.vim
-
+# and at the command line in vim
+# :PluginInstall 
 
 set hlsearch "Highlighting Keyworkd
 set ruler  "Display current cursor
