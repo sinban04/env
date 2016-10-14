@@ -82,10 +82,11 @@ function SetTags()
 endfunction
  
 call SetTags()
-  set csprg=/usr/bin/cscope
-  set csto=0
-  set cst
-  set nocsverb
+  
+set csprg=/usr/bin/cscope
+set csto=0
+set cst
+set nocsverb
  
 function! LoadCscope()
   let db = findfile("cscope.out", ".;")
