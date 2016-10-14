@@ -1,10 +1,3 @@
-
-/* This is vimrc environment for sinban */
-# 
-# git clone https://github.com/gmarik/Vundle.vit.git ~/.vim/bundle/Vundle.vim
-# and at the command line in vim
-# :PluginInstall 
-
 set hlsearch "Highlighting Keyworkd
 set ruler  "Display current cursor
 set incsearch
@@ -16,6 +9,7 @@ set autowrite
 set autoread
 set scrolloff=2
 set wildmode=longest,list
+set si "When change the line, autoindent
 set ts=4   "tag select
 set sts=4    "st select
 set sw=1    "width of scroll bar
@@ -30,10 +24,13 @@ set tabstop=2
 set softtabstop=2
 set expandtab
 set smarttab
- 
+
+
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
-highlight Comment term=bold cterm=bold ctermfg=4
- 
+
+highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+match OverLength /\%81v.\+/
+
 "Locate the cursor at the place exited last
 au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -44,7 +41,9 @@ au BufReadPost *
 if has("syntax")
   syntax on
 endif
- 
+
+highlight Comment term=bold cterm=bold ctermfg=4
+
 " File Encoding to Korean
 if $LANG[0]=='k' && $LANG[1]=='o'
 set fileencoding=korea
