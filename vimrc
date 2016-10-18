@@ -24,6 +24,7 @@ set tabstop=2
 set softtabstop=2
 set expandtab
 set smarttab
+set ai "Auto indent
 
 
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
@@ -82,7 +83,7 @@ function SetTags()
 endfunction
  
 call SetTags()
-  
+
 set csprg=/usr/bin/cscope
 set csto=0
 set cst
@@ -139,3 +140,5 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 Plugin 'The-NERD-Tree'
 Plugin 'Tagbar'
+
+
