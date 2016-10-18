@@ -19,9 +19,9 @@ set laststatus=2   "Always display status
 set paste  "Remove staircase phenomenon
 set showmatch "Highlight corresponding bracket
 set smartcase "case-sensitive search
-set shiftwidth=2 "Set width of auto indent
-set tabstop=2
-set softtabstop=2
+set shiftwidth=2 "Set width of auto indent (sw=2)
+set tabstop=2 "(ts=2)
+set softtabstop=2 "(sts=2)
 set expandtab
 set smarttab
 set ai "Auto indent
