@@ -100,6 +100,12 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
  
+
+" ***************VIM PLUGIN USAGE*********************************
+" First, mkdir ~/.vim/bundle/
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+
 "set the rumtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
