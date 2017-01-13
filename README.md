@@ -14,3 +14,7 @@ command
 :PluginInstall 
 inside the vim program
 
+OR
+* use the script vim.sh
+$ chmod 777 vim.sh
+$ ./vim.sh
