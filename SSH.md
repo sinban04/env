@@ -25,5 +25,5 @@ $ chmod 644 ~/.ssh/known_hosts
 $ scp $HOME/.ssh/id_rsa.pub id@remote.device.ip:id_rsa.pub
 
 ### Insert the id_rsa.pub to authorized_keys at the remote device
-/* This is done at the remote device, which is target*/
+/* This is done at the remote device, which is target*/ <br>
 $ cat $HOME/id_rsa.pub >> $HOME/.ssh/authorized_keys
