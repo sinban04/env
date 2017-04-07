@@ -1,34 +1,44 @@
-set hlsearch "Highlighting Keyworkd
-set ruler  "Display current cursor
-set incsearch
 set nu " Display line number
-set title
-set smartindent
-set cindent
-set autowrite
-set autoread
-set scrolloff=2
-set wildmode=longest,list
-set si "When change the line, autoindent
-set ts=4   "tag select
-set sts=4    "st select
-set sw=1    "width of scroll bar
-set bs=eol,start,indent
+set autoindent " Indent automatically
+set cindent " Auto-indent for C programming
+set smartindent " Smart indent
+"set nowrapscan "Don't go to the first line when scan the file
+set ruler  "Display current cursor
+set tabstop=2 " (ts=2) Tabsize
+set shiftwidth=2 "Set width of auto indent (sw=2)
+set softtabstop=2 "(sts=2) 
+set showmatch "Highlight corresponding bracket
 set history=256
 set laststatus=2   "Always display status
-set paste  "Remove staircase phenomenon
-set showmatch "Highlight corresponding bracket
-set smartcase "case-sensitive search
-set shiftwidth=2 "Set width of auto indent (sw=2)
-set tabstop=2 "(ts=2)
-set softtabstop=2 "(sts=2)
-set expandtab
+"" The width and height of the vim window
+"set co=84 " The width of the vim window
+"set lines=50 " The height of the vim window
+
+
+set mps+=<:> " Add the pair for < >
+set mps+={:} " 
+set paste!  "Remove staircase phenomenon
+set scrolloff=2
+set expandtab " Input blank space instead of tab
 set smarttab
-set ai "Auto indent
+set bs=eol,start,indent " Use backspace
+set wmnu " Show the possible list when autofilling 
+set fileencodings=utf-8,euc-kr " Set file encoding
+
+set title
+set autowrite
+set autoread
+set wildmode=longest,list
+
+"""" Search Function Setting
+set hlsearch "Highlighting Keyworkd
+set incsearch " Searching starts after you enter the string
+set smartcase "case-sensitive search
 
 
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
 
+"" Make it red, when the line goes over 80
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 match OverLength /\%81v.\+/
 
@@ -43,6 +53,7 @@ if has("syntax")
   syntax on
 endif
 
+" Set the color of the comment
 highlight Comment term=bold cterm=bold ctermfg=4
 
 " File Encoding to Korean
@@ -70,7 +81,7 @@ imap <tab><tab> <Esc><C-W><C-W>
 map <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>
  
- 
+"" Set ctags to find the tag througbh the several directory 
 function SetTags()
   let curdir = getcwd()
     while !filereadable("tags") && getcwd() != "/"
@@ -84,6 +95,7 @@ endfunction
  
 call SetTags()
 
+"" Set cscope function to find the several tags
 set csprg=/usr/bin/cscope
 set csto=0
 set cst
@@ -99,52 +111,10 @@ function! LoadCscope()
    endif
 endfunction
 au BufEnter /* call LoadCscope()
- 
 
-" ***************VIM PLUGIN USAGE*********************************
-" First, mkdir ~/.vim/bundle/
-" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-
-"set the rumtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
- 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-  
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-Plugin 'user/L9', {'name': 'newL9'}
-  
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-Plugin 'The-NERD-Tree'
-Plugin 'Tagbar'
+"" Use Pathogen plugins
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
 
 
