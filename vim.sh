@@ -1,9 +1,12 @@
 #!/bin/bash
 
-cd
-mkdir .vim
-cd .vim
-mkdir bundle
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall  
+sudo apt-get install curl exuberant-ctags cscope
+cp vimrc ~/.vimrc
+
+mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+cd ~/.vim/bundle
+git clone https://github.com/majutsushi/tagbar
+
 
