@@ -1,20 +1,15 @@
 
-This vimrc file includes VIM Plugin,
-so before use this file, you need to set some environment
+# ENV
+ENV is the repository for setting the environment of the system configuration,
+such as Vim, bash,..
 
-First, Make directory ~/.vim/bundle/
-and then, 
 
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+## Installing vimrc
+This installs vimrc configuration to your ~/.vimrc directory, and
+'Tagbar' plugin using 'pathogen'.
+Just execute vim.sh shell script, and it will install what you need.
 
-And, it's done!
-after use vimrc file, 
-
-command
-:PluginInstall 
-inside the vim program
-
-OR
-* use the script vim.sh
-$ chmod 777 vim.sh
+```
+$ chmod + vim.sh
 $ ./vim.sh
+```

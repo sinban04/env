@@ -53,9 +53,6 @@ if has("syntax")
   syntax on
 endif
 
-" Set the color of the comment
-highlight Comment term=bold cterm=bold ctermfg=4
-
 " File Encoding to Korean
 if $LANG[0]=='k' && $LANG[1]=='o'
 set fileencoding=korea
@@ -116,5 +113,8 @@ au BufEnter /* call LoadCscope()
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+
+" Set the color of the comment
+highlight Comment term=bold cterm=bold ctermfg=4
 
 
