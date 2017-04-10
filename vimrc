@@ -17,7 +17,7 @@ set laststatus=2   "Always display status
 
 set mps+=<:> " Add the pair for < >
 set mps+={:} " 
-set paste!  "Remove staircase phenomenon
+"set paste!  "Remove staircase phenomenon
 set scrolloff=2
 set expandtab " Input blank space instead of tab
 set smarttab
@@ -52,9 +52,6 @@ au BufReadPost *
 if has("syntax")
   syntax on
 endif
-
-" Set the color of the comment
-highlight Comment term=bold cterm=bold ctermfg=4
 
 " File Encoding to Korean
 if $LANG[0]=='k' && $LANG[1]=='o'
@@ -116,5 +113,8 @@ au BufEnter /* call LoadCscope()
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+
+" Set the color of the comment
+highlight Comment term=bold cterm=bold ctermfg=4
 
 
