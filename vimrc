@@ -17,7 +17,7 @@ set laststatus=2   "Always display status
 
 set mps+=<:> " Add the pair for < >
 set mps+={:} " 
-set paste!  "Remove staircase phenomenon
+"set paste!  "Remove staircase phenomenon
 set scrolloff=2
 set expandtab " Input blank space instead of tab
 set smarttab
