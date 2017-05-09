@@ -70,11 +70,17 @@ map 33 :w<CR>'C
 map 44 :w<CR>'D
 map 55 :w<CR>'E
 map `` :e#<CR>
-  
+
+map <C-H> <C-W>h
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+
 map <s-c> :vs./<CR>
-map <tab><tab> <c-w><c-w>
-imap <tab><tab> <Esc><C-W><C-W>
- 
+"map <tab><tab> <c-w><c-w>
+"imap <tab><tab> <Esc><C-W><C-W>
+
+
 map <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>
  
