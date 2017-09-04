@@ -77,9 +77,9 @@ map <C-K> <C-W>k
 map <C-L> <C-W>l
 
 map <s-c> :vs./<CR>
-map <s-v> :sp./<CR>
-map <tab><tab> <c-w><c-w>
-imap <tab><tab> <Esc><C-W><C-W>
+mpp <s-v> :sp./<CR>
+"map <tab><tab> <c-w><c-w>
+"imap <tab><tab> <Esc><C-W><C-W>
 
 map <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>
