@@ -1,0 +1,3 @@
+title: ENV
+description: ENV is the repository for setting the environment of the system configuration, such as Vim, bash, ...
+theme: jekyll-theme-cayman
