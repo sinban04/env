@@ -76,8 +76,8 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
-map <s-c> :vs./<CR>
-map <s-v> :sp./<CR>
+map <s-z> :vs./<CR>
+map <s-x> :sp./<CR>
 "map <tab><tab> <c-w><c-w>
 "imap <tab><tab> <Esc><C-W><C-W>
 

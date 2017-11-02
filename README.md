@@ -13,3 +13,5 @@ Just execute vim.sh shell script, and it will install what you need.
 $ chmod + vim.sh
 $ ./vim.sh
 ```
+
+For more information, see documentation in docs/
