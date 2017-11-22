@@ -11,12 +11,15 @@ git clone https://github.com/majutsushi/tagbar
 
 os_type=$(uname)
 
-if [ os_type="Linux" ];
-then
-  echo LS_COLORS="di=00;36:fi=00;37"
-elif [ os_type="Darwin" ];
-then
-  
+#echo ${os_type}
+echo
 
+if [ ${os_type} = "Linux" ];
+then
+  echo If you want to change ls color, add to bashrc the following
+  echo LS_COLORS="di=00;36:fi=00;37"
+elif [ ${os_type} = "Darwin" ];
+then
+  echo Macos 
 fi
 
