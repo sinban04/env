@@ -76,7 +76,10 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
-map <s-z> <C-w>f <C-w>t <C-w>H
+map <s-a> <C-w>f <C-w>t <C-w>H
+map <s-z> :vs %:r.cc<CR>
+map <s-x> :vs %:r.h<CR>
+
 "map <s-z> :vs./<CR>
 "map <s-x> :sp./<CR>
 "map <tab><tab> <c-w><c-w>
