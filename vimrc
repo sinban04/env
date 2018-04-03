@@ -57,33 +57,43 @@ endif
 if $LANG[0]=='k' && $LANG[1]=='o'
 set fileencoding=korea
 endif
- 
-map 1 mA
-map 2 mB
-map 3 mC
-map 4 mD
-map 5 mE
+
+" Position Mark
+map <C-k>1 mA
+map <C-k>2 mB
+map <C-k>3 mC
+map <C-k>4 mC
+map <C-k>5 mD
+map <C-k>6 mE
+map <C-k>7 mF
+map <C-k>8 mG
+map <C-k>9 mH
   
 map 11 :w<CR>'A
 map 22 :w<CR>'B
 map 33 :w<CR>'C
 map 44 :w<CR>'D
 map 55 :w<CR>'E
+map 66 :w<CR>'F
+map 77 :w<CR>'G
+map 88 :w<CR>'H
+map 99 :w<CR>'I
 map `` :e#<CR>
+
+" Shortcut
+map <c-s-u> <PageUp>
+map <c-s-d> <PageDown>
+map <c-a> :w<CR>
 
 map <C-H> <C-W>h
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
+" Open Header or Source file
 map <s-a> <C-w>f <C-w>t <C-w>H
 map <s-z> :vs %:r.cc<CR>
 map <s-x> :vs %:r.h<CR>
-
-"map <s-z> :vs./<CR>
-"map <s-x> :sp./<CR>
-"map <tab><tab> <c-w><c-w>
-"imap <tab><tab> <Esc><C-W><C-W>
 
 map <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>
