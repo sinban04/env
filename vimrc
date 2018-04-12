@@ -62,12 +62,12 @@ endif
 map <C-k>1 mA
 map <C-k>2 mB
 map <C-k>3 mC
-map <C-k>4 mC
-map <C-k>5 mD
-map <C-k>6 mE
-map <C-k>7 mF
-map <C-k>8 mG
-map <C-k>9 mH
+map <C-k>4 mD
+map <C-k>5 mE
+map <C-k>6 mF
+map <C-k>7 mG
+map <C-k>8 mH
+map <C-k>9 mI
   
 map 11 :w<CR>'A
 map 22 :w<CR>'B
@@ -95,9 +95,10 @@ map <s-a> <C-w>f <C-w>t <C-w>H
 map <s-z> :vs %:r.cc<CR>
 map <s-x> :vs %:r.h<CR>
 
-map <c-s> :w<cr>
-imap <c-s> <esc>:w<cr>
- 
+"map <c-s> :w<cr>
+"imap <c-s> <esc>:w<cr>
+
+
 "" Set ctags to find the tag througbh the several directory 
 function SetTags()
   let curdir = getcwd()
