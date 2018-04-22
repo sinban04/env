@@ -21,8 +21,8 @@ sass:
   style: compressed
 
 # Site Data
-url: sinban04.github.io # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: env  # the subpath of your site, e.g. /blog
+url: "sinban04.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/env"  # the subpath of your site, e.g. /blog
 title: ENV of SINBAN
 description: "sinban's environment setting for software development"
 keywords: 'jekyll,theme,gem-based,blog'
