@@ -3,6 +3,7 @@ encoding: UTF-8
 exclude: ["*.gem", "*.gemspec", "Gemfile", "Gemfile.lock", "node_modules", "Rakefile", "starter-kit", "vendor"]
 lang: en # Language code as defined in _data/i18n.yml. en, en-gb, en-us, zh, zh-cn, zh-tw etc.
 permalink: /blog/:year/:month/:day/:title/
+theme: jekyll-theme-simple-texture
 
 whitelist: [jekyll-feed, jekyll-redirect-from, jekyll-seo-tag, jekyll-sitemap]
 plugins:
@@ -21,21 +22,21 @@ sass:
   style: compressed
 
 # Site Data
-url: sinban04.github.io # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: env  # the subpath of your site, e.g. /blog
-title: ENV of SINBAN
-description: "sinban's environment setting for software development"
+url: # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: # the subpath of your site, e.g. /blog
+title: Simple Texture
+description: "A gem-based responsive simple texture styled Jekyll theme."
 keywords: 'jekyll,theme,gem-based,blog'
 author:
-  name: injung hwang
+  name:
   job_title:
   location:
-  email: sinban04@gmail.com
+  email:
   social_links:
     - name: facebook
-      url: facebook.com/sinban
+      url:
     - name: github
-      url: https://github.com/sinban04/
+      url: https://github.com/yizeng/jekyll-theme-simple-texture
     - name: instagram
       url:
     - name: linkedin
@@ -47,9 +48,8 @@ author:
     - name: vk
       url:
 home:
-  section1: <h1>ENV of SINBAN</h1>
-  section2: <h2>sinban's environment setting for software development</h2> 
-            <h2>Just clone the repository, and run the script ($ ./vim.sh) </h2>
+  section1: <h1>Simple Texutre</h1>
+  section2: <h2>A gem-based responsive simple texture styled Jekyll theme</h2>
   section3: <div class="social-links"><a class="ico-github btn" href="https://github.com/yizeng/jekyll-theme-simple-texture" title="View on GitHub"></a></div>
 blog:
   cc_license: http://creativecommons.org/licenses/by-sa/4.0/ # A link to CC License of your choice.
