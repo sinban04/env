@@ -1,149 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
 
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
+	<head>
+  <meta charset="utf-8">
 
-<head>
-    <meta charset="utf-8">
-<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interactive Presentation</title>
 
-<!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>ENV of SINBAN | sinban&#39;s environment setting for software development</title>
-<meta name="generator" content="Jekyll v3.7.2" />
-<meta property="og:title" content="ENV of SINBAN" />
-<meta name="author" content="injung hwang" />
-<meta property="og:locale" content="en" />
-<meta name="description" content="sinban&#39;s environment setting for software development" />
-<meta property="og:description" content="sinban&#39;s environment setting for software development" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="ENV of SINBAN" />
-<script type="application/ld+json">
-{"author":{"@type":"Person","name":"injung hwang"},"description":"sinban&#39;s environment setting for software development","headline":"ENV of SINBAN","name":"ENV of SINBAN","@type":"WebSite","url":"http://localhost:4000/","@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
 
-<meta name="keywords" content="" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css" id="theme">
 
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
 
-<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ENV of SINBAN" />
-    <link href='/assets/stylesheets/home.css' rel="stylesheet" type="text/css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61981167-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.2.1.min.js"><\/script>')
-</script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
-<script>
-    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
-</script>
+    gtag('config', 'UA-61981167-2');
+  </script>
 
 
 </head>
 
-<body>
-    <ul id="menu">
-        <li data-menuanchor="bio"><a href="#bio">Biography</a></li>
-        <li data-menuanchor="social"><a href="#social">Social Links</a></li>
-    </ul>
 
-    <div id="section0" class="section" data-name="bio">
+	<body>
 
-        <!--[if IE]>
-    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
-<![endif]-->
-<noscript>
-    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
-</noscript>
+        		<div class="reveal">
+			<div class="slides">
+				<section>
+				
+				
+
+				
+					
+
+					
+
+					<section><h1 id="welcome">Welcome!</h1>
+<h3 id="this-is-sinbans-env-repo">This is sinban’s env repo.</h3>
+<h4 id="env-setting-4-software-devel">Env Setting 4 Software Devel.</h4>
+<p>Go Next (Right)</p>
+</section>
+				
+					
+
+					
+						
+						</section><section>
+					
+
+					<section><h2 id="first-clone-the-repo">First, Clone the repo.</h2>
+
+<p>$ git clone https://github.com/sinban04/env.git</p>
+
+<p>Go Next (Down)</p>
+</section>
+				
+					
+
+					
+
+					<section><p>Go to the directory.</p>
+
+<p>$ cd env/</p>
+
+<p>Go next (Right)</p>
+</section>
+				
+					
+
+					
+						
+						</section><section>
+					
+
+					<section><h2 id="run-the-script">Run the script.</h2>
+
+<p>$ ./vim.sh</p>
+
+</section>
+				
+			</div>
+		</div>
 
 
-        <div class="headings animated fadeInLeft">
-            <h1>ENV of SINBAN</h1>
-            <h2>sinban's environment setting for software development</h2> <h2>Just clone the repository, and run the script ($ ./vim.sh) </h2>
-            <div class="social-links"><a class="ico-github btn" href="https://github.com/yizeng/jekyll-theme-simple-texture" title="View on GitHub"></a></div>
-        </div>
-        <a class="btn-continue animated bounce" title="More" href="#social"></a>
-    </div>
 
-    <div id="section1" class="section" data-name="social">
-        <h1 class="animated hidden">
-            <a class="btn-enter btn-light" title="Enter Blog" href="/blog/">Enter Blog</a>
-        </h1>
-        <div class="social-links animated hidden">
-            <a class="btn-light ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
-            
-                <a class="btn-light ico-gmail" href="mailto:sinban04@gmail.com" rel="me" target="_blank" title="email"></a>
-            
-            
-                
-                    <a class="btn-light ico-facebook" href="facebook.com/sinban" rel="me" target="_blank" title="facebook"></a>
-                
-            
-                
-                    <a class="btn-light ico-github" href="https://github.com/sinban04/" rel="me" target="_blank" title="github"></a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-        </div>
-    </div>
+		<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-    <script src="/assets/javascripts/jquery.fullPage.min.js"></script>
-<script src="/assets/javascripts/jquery.easing.min.js"></script>
 <script>
-    $(document).ready(function () {
-        $.fn.fullpage({
-            anchors: ['bio', 'social'],
-            css3: true,
-            fixedElements: '.site-notice',
-            menu: '#menu',
-            navigation: true,
-            navigationPosition: 'right',
-            resize: false,
-            scrollingSpeed: 500,
 
-            afterLoad: function (anchorLink, index) {
-                if (index === 1) {
-                    $('#section0 .headings, #section0').removeClass('hidden').addClass('fadeInDown');
-                    $('.btn-continue').removeClass('hidden').addClass('bounce');
-                }
-                if (index === 2) {
-                    $('#section1 h1, #section1 .social-links').removeClass('hidden').addClass('fadeInUp');
-                }
-            },
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-            onLeave: function (index, direction) {
-                if (index == 1 && direction == 'down') {
-                    $('#section0 .headings, #section0 .btn-continue').addClass('hidden').removeClass('bounce fadeInDown fadeInLeft');
-                }
-                if (index == 2 && direction == 'up') {
-                    $('#section1 h1, #section1 .social-links').addClass('hidden').removeClass('fadeInUp');
-                }
-            }
-        });
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
     });
 
 </script>
 
 
-</body>
-
+	</body>
 </html>
