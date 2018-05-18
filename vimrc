@@ -81,8 +81,6 @@ map 99 :w<CR>'I
 map `` :e#<CR>
 
 " Shortcut
-map <c-s-u> <PageUp>
-map <c-s-d> <PageDown>
 map <c-a> :w<CR>
 
 map <C-H> <C-W>h
@@ -95,8 +93,6 @@ map <s-a> <C-w>f <C-w>t <C-w>H
 map <s-z> :vs %:r.cc<CR>
 map <s-x> :vs %:r.h<CR>
 
-"map <c-s> :w<cr>
-"imap <c-s> <esc>:w<cr>
 
 
 "" Set ctags to find the tag througbh the several directory 
