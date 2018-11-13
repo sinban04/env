@@ -33,15 +33,16 @@ fi
 
 cp vimrc ~/.vimrc
 
-mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-cd ~/.vim/bundle
-git clone https://github.com/majutsushi/tagbar
+#mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle && \
+#curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+#
+#cd ~/.vim/bundle
+#git clone https://github.com/majutsushi/tagbar
 
 os_type=$(uname)
 
-echo This system is ${os_type}
+echo "This system is ${os_type}"
 
 
 if [ "${os_type}" = "Linux" ];
@@ -54,4 +55,6 @@ then
   cp ./bashrc_mac ~/.bashrc
 
 fi
+
+echo "export TERM=xterm-256color" >> ~/.bashrc
 

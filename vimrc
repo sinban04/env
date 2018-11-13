@@ -93,8 +93,6 @@ map <s-a> <C-w>f <C-w>t <C-w>H
 map <s-z> :vs %:r.cc<CR>
 map <s-x> :vs %:r.h<CR>
 
-
-
 "" Set ctags to find the tag througbh the several directory 
 function SetTags()
   let curdir = getcwd()
@@ -125,11 +123,6 @@ function! LoadCscope()
    endif
 endfunction
 au BufEnter /* call LoadCscope()
-
-"" Use Pathogen plugins
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
 
 " Set the color of the comment
 highlight Comment term=bold cterm=bold ctermfg=4
