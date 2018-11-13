@@ -44,6 +44,8 @@ install_light_line() {
   
   echo "let g:lightline = {" >> ~/.vimrc
   echo "      \ 'colorscheme': 'solarized'," >> ~/.vimrc
+  echo "      \ 'active': {" >> ~/.vimrc
+  echo "      \ 'left' : [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ]," >> ~/.vimrc
   echo "      \ }" >> ~/.vimrc
 
 }
