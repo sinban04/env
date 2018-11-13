@@ -36,6 +36,7 @@ install_you_complete_me() {
   cd ~/.vim/bundle/YouCompleteMe
   python3 install.py --clang-completer
   echo set encoding=utf-8 >> ~/.vimrc
+  echo highlight YcmErrorLine guibg=#3f0000 >> ~/.vimrc
 }
 
 install_light_line() {
