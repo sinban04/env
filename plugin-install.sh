@@ -30,11 +30,12 @@ install_multiple_cursors() {
   git clone https://github.com/terryma/vim-multiple-cursors.git ~/.vim/bundle/vim-multiple-cursors
 }
 
-install_complete_me() {
+install_you_complete_me() {
   sudo apt-get install build-essential cmake python3-dev
   git clone --recursive https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
   cd ~/.vim/bundle/YouCompleteMe
   python3 install.py --clang-completer
+  echo set encoding=utf-8 >> ~/.vimrc
 }
 
 install_light_line() {
