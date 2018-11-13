@@ -27,16 +27,34 @@ install_tagbar() {
 }
 
 install_multiple_cursors() {
-  git clone https://github.com/terryma/vim-multiple-cursors.git ~/.vim/bundle/nerdtree
+  git clone https://github.com/terryma/vim-multiple-cursors.git ~/.vim/bundle/vim-multiple-cursors
+}
+
+install_complete_me() {
+  sudo apt-get install build-essential cmake python3-dev
+  git clone --recursive https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
+  cd ~/.vim/bundle/YouCompleteMe
+  python3 install.py --clang-completer
 }
 
 install_light_line() {
-  git clone https://github.com/itchyny/lightline.vim.git ~/.vim/bundle/nerdtree
+  git clone https://github.com/itchyny/lightline.vim.git ~/.vim/bundle/lightline.vim
+  
+  echo "let g:lightline = {" >> ~/.vimrc
+  echo "      \ 'colorscheme': 'solarized'," >> ~/.vimrc
+  echo "      \ }" >> ~/.vimrc
+
 }
 
 install_nerd_tree() {
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
   echo "map <C-E> :NERDTreeToggle<CR>" >> ~/.vimrc 
+}
+
+install_light() {
+  instlal_tagbar
+  install_light_line
+  install_multiple_cursors
 }
 
 install_all() {
@@ -62,6 +80,10 @@ if [ "$1" = "all" ] || [ "$1" = "All" ] ; then
   echo -e "${COLOR_GREEN} Install all plugins ... ${COLOR_NONE}"
   install_all
 
+elif [ "$1" = "light" ] || [ "$1" = "lightweight" ] || [ "$1" = "light-version" ] ; then
+  echo -e "${COLOR_GREEN} Install light plugins ... ${COLOR_NONE}"
+  install_light
+
 elif [ "$1" = "nerdtree" ] || [ "$1" = "nerd-tree" ] || [ "$1" = "nerd_tree" ] ; then
   echo -e "${COLOR_GREEN} Install nerdtree ... ${COLOR_NONE}"
   install_nerd_tree
@@ -77,6 +99,10 @@ elif [ "$1" = "multiple-cursors" ] || [ "$1" = "multiple_cursors" ] ; then
 elif [ "$1" = "light-line" ] || [ "$1" = "light_line" ] || [ "$1" = "lightline" ]; then
   echo -e "${COLOR_GREEN} Install light_line ... ${COLOR_NONE}"
   install_light_line
+
+elif [ "$1" = "you-complete-me" ] || [ "$1" = "you_complete_me" ] || [ "$1" = "youcompleteme" ]; then
+  echo -e "${COLOR_GREEN} Install you-complete-me ... ${COLOR_NONE}"
+  install_you_complete_me
 
 else
   echo -e ""
