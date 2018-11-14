@@ -50,6 +50,10 @@ install_light_line() {
 
 }
 
+install_auto_pairs(){
+  git clone https://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-paris
+}
+
 install_nerd_tree() {
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
   echo "map <C-E> :NERDTreeToggle<CR>" >> ~/.vimrc 
@@ -95,6 +99,11 @@ elif [ "$1" = "nerdtree" ] || [ "$1" = "nerd-tree" ] || [ "$1" = "nerd_tree" ] ;
 elif [ "$1" = "tagbar" ] || [ "$1" = "Tagbar" ] ; then
   echo -e "${COLOR_GREEN} Install tagbar ... ${COLOR_NONE}"
   install_tagbar
+
+elif [ "$1" = "autopairs" ] || [ "$1" = "auto-pairs" ] || [ "$1" = "auto_pairs" ] ; then
+  echo -e "${COLOR_GREEN} Install auto pairs ... ${COLOR_NONE}"
+  install_auto_pairs
+
 
 elif [ "$1" = "multiple-cursors" ] || [ "$1" = "multiple_cursors" ] ; then
   echo -e "${COLOR_GREEN} Install multiple-cursors ... ${COLOR_NONE}"
