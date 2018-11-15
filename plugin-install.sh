@@ -23,6 +23,7 @@ COLOR_WHITE='\033[1;37m'
 
 install_tagbar() {
   git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
+  echo "\" tagbar configuration" >> ~/.vimrc
   echo "map <C-O> :Tagbar<CR>" >> ~/.vimrc 
 }
 
@@ -35,13 +36,27 @@ install_you_complete_me() {
   git clone --recursive https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
   cd ~/.vim/bundle/YouCompleteMe
   python3 install.py --clang-completer
-  echo set encoding=utf-8 >> ~/.vimrc
-  echo highlight YcmErrorLine guibg=#3f0000 >> ~/.vimrc
+
+  echo " \"You Complete Me configuration" >> ~/.vimrc
+  echo "set encoding=utf-8" >> ~/.vimrc
+  echo "highlight YcmErrorLine guibg=#3f0000" >> ~/.vimrc
+  echo "let g:ycm_error_symbol = '!!'" >> ~/.vimrc
+  echo "let g:ycm_warning_symbol = '>>'" >> ~/.vimrc
+  echo "let g:ycm_max_num_candidates = 1" >> ~/.vimrc
+  echo "map <C-F> :YcmCompleter FixIt<CR>" >> ~/.vimrc
+  echo "map <C-V> :YcmCompleter GoTo<CR>" >> ~/.vimrc
+
+}
+
+install_fugitive() {
+  git clone git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle
+
 }
 
 install_light_line() {
   git clone https://github.com/itchyny/lightline.vim.git ~/.vim/bundle/lightline.vim
   
+  echo "\" lightline configuration" >> ~/.vimrc
   echo "let g:lightline = {" >> ~/.vimrc
   echo "      \ 'colorscheme': 'solarized'," >> ~/.vimrc
   echo "      \ 'active': {" >> ~/.vimrc
@@ -56,20 +71,25 @@ install_auto_pairs(){
 
 install_nerd_tree() {
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+  echo "\" nerdtree configuration" >> ~/.vimrc
   echo "map <C-E> :NERDTreeToggle<CR>" >> ~/.vimrc 
 }
 
 install_light() {
   instlal_tagbar
+  install_fugitive
   install_light_line
   install_multiple_cursors
 }
 
 install_all() {
   install_tagbar
+  install_fugitive
+  install_auto_pairs
   install_multiple_cursors
   install_nerd_tree
   install_light_line
+  install_you_complete_me
 }
 
 echo -e "${COLOR_YELLOW} Install pathogen vim package ${COLOR_NONE}"
@@ -95,6 +115,10 @@ elif [ "$1" = "light" ] || [ "$1" = "lightweight" ] || [ "$1" = "light-version" 
 elif [ "$1" = "nerdtree" ] || [ "$1" = "nerd-tree" ] || [ "$1" = "nerd_tree" ] ; then
   echo -e "${COLOR_GREEN} Install nerdtree ... ${COLOR_NONE}"
   install_nerd_tree
+
+elif [ "$1" = "fugitive" ] || [ "$1" = "vim-fugitive ] ; then
+  echo -e "${COLOR_GREEN} Install fugitive ... ${COLOR_NONE}"
+  install_fugitive
 
 elif [ "$1" = "tagbar" ] || [ "$1" = "Tagbar" ] ; then
   echo -e "${COLOR_GREEN} Install tagbar ... ${COLOR_NONE}"

@@ -21,6 +21,8 @@ COLOR_LIGHT_PURPLE='\033[1;35m'
 COLOR_LIGHT_CYAN='\033[1;36m'
 COLOR_WHITE='\033[1;37m'
 
+
+
 if [ "${os_type}" = "Linux" ];
 then
   echo Install vim and dependencies with apt ...
