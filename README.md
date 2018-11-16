@@ -10,8 +10,14 @@ and 'Tagbar' plugin using 'pathogen'.
 Just execute vim.sh shell script, and it will install what you need.
 
 ```
-$ chmod + vim.sh
-$ ./vim.sh
+$ chmod + install-vimrc.sh
+$ ./install-vimrc.sh
+```
+
+If you want to install vim plugin,
+
+```
+$ ./plugin-install.sh
 ```
 
 For more information, see documentation in docs/
