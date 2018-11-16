@@ -23,7 +23,7 @@ COLOR_WHITE='\033[1;37m'
 
 install_tagbar() {
   git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
-  echo "\" tagbar configuration" >> ~/.vimrc
+  echo " \" tagbar configuration" >> ~/.vimrc
   echo "map <C-O> :Tagbar<CR>" >> ~/.vimrc 
 }
 
@@ -49,18 +49,18 @@ install_you_complete_me() {
 }
 
 install_fugitive() {
-  git clone git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle
-
+  git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle
 }
 
 install_light_line() {
   git clone https://github.com/itchyny/lightline.vim.git ~/.vim/bundle/lightline.vim
   
-  echo "\" lightline configuration" >> ~/.vimrc
+  echo " \" lightline configuration" >> ~/.vimrc
   echo "let g:lightline = {" >> ~/.vimrc
   echo "      \ 'colorscheme': 'solarized'," >> ~/.vimrc
   echo "      \ 'active': {" >> ~/.vimrc
   echo "      \ 'left' : [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ]," >> ~/.vimrc
+  echo "      \ }" >> ~/.vimrc
   echo "      \ }" >> ~/.vimrc
 
 }
@@ -71,12 +71,13 @@ install_auto_pairs(){
 
 install_nerd_tree() {
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-  echo "\" nerdtree configuration" >> ~/.vimrc
+
+  echo " \" nerdtree configuration" >> ~/.vimrc
   echo "map <C-E> :NERDTreeToggle<CR>" >> ~/.vimrc 
 }
 
 install_light() {
-  instlal_tagbar
+  install_tagbar
   install_fugitive
   install_light_line
   install_multiple_cursors
@@ -92,16 +93,22 @@ install_all() {
   install_you_complete_me
 }
 
+
+##### Main Start
 echo -e "${COLOR_YELLOW} Install pathogen vim package ${COLOR_NONE}"
 
-mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-echo """ Use Pathogen plugins" >> ~/.vimrc
-echo "execute pathogen#infect()" >> ~/.vimrc
-echo "syntax on" >> ~/.vimrc
-echo "filetype plugin indent on" >> ~/.vimrc
+if [ -e ~/.vim/bundle ]; then
+  echo -e "${COLOR_RED} Already pathogen installed. ${COLOR_NONE}"
+else
+  mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle && \
+  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+  echo " \" Use Pathogen plugins" >> ~/.vimrc
+  echo "execute pathogen#infect()" >> ~/.vimrc
+  echo "syntax on" >> ~/.vimrc
+  echo "filetype plugin indent on" >> ~/.vimrc
+fi
 
 
 if [ "$1" = "all" ] || [ "$1" = "All" ] ; then
@@ -113,10 +120,10 @@ elif [ "$1" = "light" ] || [ "$1" = "lightweight" ] || [ "$1" = "light-version" 
   install_light
 
 elif [ "$1" = "nerdtree" ] || [ "$1" = "nerd-tree" ] || [ "$1" = "nerd_tree" ] ; then
-  echo -e "${COLOR_GREEN} Install nerdtree ... ${COLOR_NONE}"
+  echo -e "${COLOR_GREEN} Install nerd tree ... ${COLOR_NONE}"
   install_nerd_tree
 
-elif [ "$1" = "fugitive" ] || [ "$1" = "vim-fugitive ] ; then
+elif [ "$1" = "fugitive" ] || [ "$1" = "vim-fugitive" ] ; then
   echo -e "${COLOR_GREEN} Install fugitive ... ${COLOR_NONE}"
   install_fugitive
 
@@ -146,8 +153,12 @@ else
   echo -e ""
   echo -e "${COLOR_LIGHT_GREEN}      How to use vim-plugin.sh ${COLOR_NONE}"
   echo -e "     Usage: ${COLOR_CYAN}./vim-plugin.sh ${COLOR_LIGHT_RED} [options]"
-  echo -e "   [options] : all(All), tagbar(Tagbar), multiple-cursors(multiple_cursors) ${COLOR_NONE}"
-  echo -e ""
+  echo -e "   [options] : all(All), "
+  echo -e "   all(All), light(lightweight, light-version), "
+  echo -e "   tagbar(Tagbar), multiple-cursors(multiple_cursors)"
+  echo -e "   lightline(light-line), fugitive(vim-fugitive)"
+  echo -e "   autopairs(auto-pairs, auto_pairs), you-complete-me(you_complete_me)"
+  echo -e "${COLOR_NONE}"
   echo -e ""
 fi
 
