@@ -21,19 +21,55 @@ COLOR_LIGHT_PURPLE='\033[1;35m'
 COLOR_LIGHT_CYAN='\033[1;36m'
 COLOR_WHITE='\033[1;37m'
 
+install_ctags ()
+{
+  echo -e "${COLOR_YELLOW} Install cscope! ${COLOR_NONE}"
+  cd
+  wget http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+  tar zxvf ctags-5.8.tar.gz
+  cd ctags-5.8
+  ./configure
+  make -j8
+  sudo make install
+}
+
+install_cscope ()
+{
+  echo -e "${COLOR_YELLOW} Install cscope! ${COLOR_NONE}"
+  cd
+  git clone https://github.com/sinban04/cscope.git
+  cd cscope
+  ./configure
+  autoreconf -f -i
+  make -j8
+  sudo make install
+  sudo cp /usr/local/bin/cscope /usr/bin/cscope
+}
+
+os_type=$(uname)
+
+# Install vim & git
+sudo apt-get install vim git \
+  && echo -e "${COLOR_GREEN} Installed git and vim ${COLOR_NONE}" \
+  || { echo -e "${COLOR_RED} Installing git and vim failed.${COLOR_NONE}"; }
+
+
+cp vimrc ~/.vimrc
 
 
 if [ "${os_type}" = "Linux" ];
 then
-  echo Install vim and dependencies with apt ...
-  sudo apt-get install curl exuberant-ctags cscope
+  echo -e "${COLOR_YELLOW} Install vim and dependencies with apt ...${COLOR_NONE}"
+  sudo apt-get install curl exuberant-ctags cscope \
+    && echo -e "${COLOR_GREEN}Installed well!${COLOR_NONE}" \
+    || { echo -e "${COLOR_RED}No package found${COLOR_NONE}"; install_ctags; install_cscope;}
+
 elif [ "${os_type}" = "Darwin" ];
 then
-  echo Install vim and dependencies with Homebrew ...
+  echo -e "${COLOR_YELLOW} Install vim and dependencies with Homebrew ...${COLOR_NONE}"
   brew install curl ctags cscope
 fi
 
-cp vimrc ~/.vimrc
 
 
 #mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle && \
@@ -42,9 +78,8 @@ cp vimrc ~/.vimrc
 #cd ~/.vim/bundle
 #git clone https://github.com/majutsushi/tagbar
 
-os_type=$(uname)
 
-echo "This system is ${os_type}"
+echo -e "${COLOR_LIGHT_CYAN}This system is ${os_type}${COLOR_NONE}"
 
 
 if [ "${os_type}" = "Linux" ];
