@@ -99,6 +99,9 @@ install_all() {
 ##### Main Start
 echo -e "${COLOR_YELLOW} Install pathogen vim package ${COLOR_NONE}"
 
+if [ -e ~/.vim/bundle ]; then
+  echo -e "${COLOR_RED} Already pathogen installed. ${COLOR_NONE}"
+else
   mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle && \
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
@@ -106,18 +109,7 @@ echo -e "${COLOR_YELLOW} Install pathogen vim package ${COLOR_NONE}"
   echo "execute pathogen#infect()" >> ~/.vimrc
   echo "syntax on" >> ~/.vimrc
   echo "filetype plugin indent on" >> ~/.vimrc
-
-#if [ -e ~/.vim/bundle ]; then
-#  echo -e "${COLOR_RED} Already pathogen installed. ${COLOR_NONE}"
-#else
-#  mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle && \
-#  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-#
-#  echo " \" Use Pathogen plugins" >> ~/.vimrc
-#  echo "execute pathogen#infect()" >> ~/.vimrc
-#  echo "syntax on" >> ~/.vimrc
-#  echo "filetype plugin indent on" >> ~/.vimrc
-#fi
+fi
 
 
 if [ "$1" = "all" ] || [ "$1" = "All" ] ; then
