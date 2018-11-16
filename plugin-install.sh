@@ -32,7 +32,9 @@ install_multiple_cursors() {
 }
 
 install_you_complete_me() {
-  sudo apt-get install build-essential cmake python3-dev
+  sudo apt-get install build-essential cmake python3-dev \
+    && echo "start install you_complete_me" \
+    || { echo -e "${COLOR_RED} You need to install 'build-essential', 'cmake', 'python3-dev' before install you_complete_me ${COLOR_NONE}" ; }
   git clone --recursive https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
   cd ~/.vim/bundle/YouCompleteMe
   python3 install.py --clang-completer
@@ -154,8 +156,10 @@ else
   echo -e "${COLOR_LIGHT_GREEN}      How to use vim-plugin.sh ${COLOR_NONE}"
   echo -e "     Usage: ${COLOR_CYAN}./vim-plugin.sh [options]${COLOR_NONE}"
   echo -e "   [options] : "
-  echo -e "${COLOR_LIGHT_RED}        all(All), light(lightweight, light-version), "
-  echo -e "       tagbar(Tagbar), multiple-cursors(multiple_cursors)"
+  echo -e "           <Install Set> "
+  echo -e "${COLOR_LIGHT_RED}        all(All), light(lightweight, light-version), ${COLOR_NONE}"
+  echo -e "           <Install Module> "
+  echo -e "${COLOR_LIGHT_RED}       tagbar(Tagbar), multiple-cursors(multiple_cursors)"
   echo -e "       lightline(light-line), fugitive(vim-fugitive)"
   echo -e "       autopairs(auto-pairs, auto_pairs), you-complete-me(you_complete_me)"
   echo -e "${COLOR_NONE}"
