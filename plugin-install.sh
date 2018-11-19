@@ -68,7 +68,7 @@ install_light_line() {
 }
 
 install_auto_pairs(){
-  git clone https://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-paris
+  git clone https://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
 }
 
 install_nerd_tree() {
@@ -99,7 +99,7 @@ install_all() {
 ##### Main Start
 echo -e "${COLOR_YELLOW} Install pathogen vim package ${COLOR_NONE}"
 
-if [ -e ~/.vim/bundle ]; then
+if [ -e ~/.vim/autoload/pathogen.vim ]; then
   echo -e "${COLOR_RED} Already pathogen installed. ${COLOR_NONE}"
 else
   mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle && \
@@ -153,7 +153,7 @@ else
   echo -e ""
   echo -e ""
   echo -e "${COLOR_LIGHT_GREEN}      How to use vim-plugin.sh ${COLOR_NONE}"
-  echo -e "     Usage: ${COLOR_CYAN}./vim-plugin.sh [options]${COLOR_NONE}"
+  echo -e "     Usage: ${COLOR_CYAN}./plugin-install.sh [options]${COLOR_NONE}"
   echo -e "   [options] : "
   echo -e "           <Install Set> "
   echo -e "${COLOR_LIGHT_RED}        all(All), light(lightweight, light-version), ${COLOR_NONE}"
