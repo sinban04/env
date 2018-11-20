@@ -124,7 +124,8 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
 
-" Set the color of the comment
+" Set the color of the highlight 
 highlight Comment term=bold cterm=bold ctermfg=4
+hi Search ctermbg=DarkGray cterm=bold ctermfg=Yellow
 
 
