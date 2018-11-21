@@ -41,7 +41,7 @@ install_you_complete_me() {
 
   echo " \"You Complete Me configuration" >> ~/.vimrc
   echo "set encoding=utf-8" >> ~/.vimrc
-  echo "highlight YcmErrorLine ctermbg=LightGray ctermfg=Black cterm=bold guibg=#3f0000" >> ~/.vimrc
+  echo "highlight YcmErrorLine ctermbg=LightBlue ctermfg=DarkGray cterm=bold guibg=#3f0000" >> ~/.vimrc
   echo "let g:ycm_error_symbol = '!!'" >> ~/.vimrc
   echo "let g:ycm_warning_symbol = '>>'" >> ~/.vimrc
   echo "let g:ycm_max_num_candidates = 1" >> ~/.vimrc
