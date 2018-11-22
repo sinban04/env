@@ -127,5 +127,6 @@ au BufEnter /* call LoadCscope()
 " Set the color of the highlight 
 highlight Comment term=bold cterm=bold ctermfg=4
 hi Search ctermbg=DarkGray cterm=bold ctermfg=Yellow
+hi Visual ctermbg=LightGreen cterm=bold ctermfg=DarkBlue guifg=Yellow guibg=#FFFFFF
 
 
