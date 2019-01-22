@@ -56,7 +56,6 @@ sudo apt-get install vim git \
 
 cp vimrc ~/.vimrc
 
-
 if [ "${os_type}" = "Linux" ];
 then
   echo -e "${COLOR_YELLOW} Install vim and dependencies with apt ...${COLOR_NONE}"

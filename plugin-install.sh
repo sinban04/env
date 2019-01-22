@@ -21,6 +21,7 @@ COLOR_LIGHT_PURPLE='\033[1;35m'
 COLOR_LIGHT_CYAN='\033[1;36m'
 COLOR_WHITE='\033[1;37m'
 
+###### FUNCTIONS ######
 install_tagbar() {
   git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
   echo " \" tagbar configuration" >> ~/.vimrc
@@ -78,6 +79,10 @@ install_nerd_tree() {
   echo "map <C-E> :NERDTreeToggle<CR>" >> ~/.vimrc 
 }
 
+install_ctrlp() {
+  git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ 
+}
+
 install_light() {
   install_tagbar
   install_fugitive
@@ -94,7 +99,7 @@ install_all() {
   install_light_line
   install_you_complete_me
 }
-
+############ FUNCTION END ###########
 
 ##### Main Start
 echo -e "${COLOR_YELLOW} Install pathogen vim package ${COLOR_NONE}"
