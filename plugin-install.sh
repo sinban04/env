@@ -51,6 +51,14 @@ install_you_complete_me() {
 
 }
 
+install_fuzzy_finder() {
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+  
+  echo "set rtp+=~/.fzf" >> ~/.vimrc
+  echo "map <C-p> : call fzf#run({'sink': 'e', 'options': '--border'}) <CR>" >> ~/.vimrc
+}
+
 install_fugitive() {
   git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle
 }
@@ -154,6 +162,10 @@ elif [ "$1" = "you-complete-me" ] || [ "$1" = "you_complete_me" ] || [ "$1" = "y
   echo -e "${COLOR_GREEN} Install you-complete-me ... ${COLOR_NONE}"
   install_you_complete_me
 
+elif [ "$1" = "fuzzy-finder" ] || [ "$1" = "fuzzy_finder" ]; then
+  echo -e "${COLOR_GREEN} Install fuzzy finder ... ${COLOR_NONE}"
+  install_fuzzy_finder
+
 else
   echo -e ""
   echo -e ""
@@ -165,7 +177,7 @@ else
   echo -e "           <Install Module> "
   echo -e "${COLOR_LIGHT_RED}       tagbar(Tagbar), multiple-cursors(multiple_cursors)"
   echo -e "       lightline(light-line), fugitive(vim-fugitive)"
-  echo -e "       autopairs(auto-pairs, auto_pairs), you-complete-me(you_complete_me)"
+  echo -e "       autopairs(auto-pairs, auto_pairs), you-complete-me(you_complete_me), fuzzy-finder(fuzzy_finder)"
   echo -e "${COLOR_NONE}"
   echo -e ""
 fi
