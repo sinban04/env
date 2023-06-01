@@ -124,9 +124,35 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
 
-" Set the color of the highlight 
-highlight Comment term=bold cterm=bold ctermfg=4
+" Set the color of the highlight
 hi Search ctermbg=DarkGray cterm=bold ctermfg=Yellow
 hi Visual ctermbg=LightGreen cterm=bold ctermfg=DarkBlue guifg=Yellow guibg=#FFFFFF
+
+au BufRead,BufNewFile *.scala set filetype=scala
+au! Syntax scala source ~/.vim/syntax/scala.vim
+
+
+ " Use Pathogen plugins
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+ " tagbar configuration
+map <C-O> :Tagbar<CR>
+ " lightline configuration
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \ 'left' : [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ }
+      \ }
+
+highlight Comment term=bold cterm=bold ctermfg=4
+" For YAML
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" Fix auto-indentation for YAML files
+augroup yaml_fix
+    autocmd!
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
+augroup END
 
 
