@@ -155,4 +155,6 @@ augroup yaml_fix
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
 augroup END
 
-
+"" https://github.com/derekwyatt/vim-scala
+au BufRead,BufNewFile *.scala set filetype=scala
+au! Syntax scala source ~/.vim/syntax/scala.vim
