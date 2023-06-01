@@ -112,17 +112,18 @@ set csprg=/usr/bin/cscope
 set csto=0
 set cst
 set nocsverb
- 
-function! LoadCscope()
-  let db = findfile("cscope.out", ".;")
-  if(!empty(db))
-    let path = strpart(db, 0, match(db, "/cscope.out$"))
-    set nocscopeverbose " suppresss 'dubplicate connection ' error
-    exe "cs add " . db . "" . path
-    set cscopeverbose
-   endif
-endfunction
-au BufEnter /* call LoadCscope()
+
+"function! LoadCscope()
+"  let db = findfile("cscope.out", ".;")
+"  if(!empty(db))
+"    let path = strpart(db, 0, match(db, "/cscope.out$"))
+"    set nocscopeverbose " suppresss 'dubplicate connection ' error
+"    exe "cs add " . db . "" . path
+"    set cscopeverbose
+"   endif
+"endfunction
+"au BufEnter /* call LoadCscope()
+
 
 " Set the color of the highlight
 hi Search ctermbg=DarkGray cterm=bold ctermfg=Yellow
